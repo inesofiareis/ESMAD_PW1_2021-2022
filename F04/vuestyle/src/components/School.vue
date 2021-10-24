@@ -27,7 +27,7 @@
 			return {
 				msg: 'A ESMAD é uma escola do IPP',
 				schools: ['ESMAD', 'ISEP', 'ESE', 'ISCAP', 'ESTG', 'ESS', 'ESHT'],
-
+				//msgClasses: [],
 				msgClasses: {
 					'red-text': false,
 					'big-text': false,
