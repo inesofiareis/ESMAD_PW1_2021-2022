@@ -43,6 +43,7 @@
 		computed: {
 			printDataPersonComputed() {
 				console.log(`COMPUTED--> NOME: ${this.person.firstName} e IDADE: ${this.person.age}`);
+				return true;
 			},
 			getFullNameComputed() {
 				return this.person.firstName + ' ' + this.person.lastName;
