@@ -32,13 +32,13 @@
 				this.num++;
 			},
 			decrement() {
-				this.num--;
+				if(this.num > 0)
+					this.num--;
 			},
 		},
 		computed: {
 			isNumInvalid() {
 				if (this.num < 0) {
-					this.num = 0;
 					return true;
 				} else {
 					return false;
