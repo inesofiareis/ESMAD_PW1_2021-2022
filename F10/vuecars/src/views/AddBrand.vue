@@ -45,7 +45,7 @@
 
 				brands.push({
                     // Obter o id da ultima marca que está no array e somar +1
-					id: brands[brands.length - 1].id + 1,
+					id: brands.length ? brands[brands.length - 1].id + 1 : 1,
 					name: this.form.name,
 					image: this.form.image,
 					year: this.form.year,
