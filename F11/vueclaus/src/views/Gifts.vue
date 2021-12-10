@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Prendas</h1>
-		<div>
+		<div v-if="loggedUser.username == 'painatal'">
 			<h3>Adicionar prenda</h3>
 			<form @submit.prevent="addGift">
 				<label>Nome</label>
@@ -25,7 +25,7 @@
 				<th v-if="loggedUser.username == 'painatal'">Crianças</th>
 				<th v-else>Opções</th>
 			</tr>
-			<tr v-for="(gift, index) in $store.getters['getGifts']" :key="index">
+			<tr v-for="(gift, index) in $store.getters.getGifts" :key="index">
 				<td>{{ index + 1 }}</td>
 				<td>{{ gift.name }}</td>
 				<td>{{ gift.quantity }}</td>
@@ -49,12 +49,12 @@
 					name: null,
 					quantity: 0,
 				},
-				loggedUser: this.$store.getters['getLoggedUser'],
+				loggedUser: this.$store.getters.getLoggedUser,
 			};
 		},
 		methods: {
 			addGift() {
-				if (!this.$store.getters['isGiftNameAvailable'](this.form.name)) return alert('Prenda já existente!');
+				if (!this.$store.getters.isGiftNameAvailable(this.form.name)) return alert('Prenda já existente!');
 
 				this.$store.commit('addGift', { name: this.form.name, quantity: this.form.quantity, children: [] });
 				alert('Prenda adicionada!');

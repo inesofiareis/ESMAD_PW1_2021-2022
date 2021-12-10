@@ -1,11 +1,11 @@
 <template>
 	<div id="app">
-		<div v-if="!$store.getters['getLoggedUser']" id="nav">
+		<div v-if="!$store.getters.getLoggedUser" id="nav">
 			<router-link to="/">Login</router-link> |
 			<router-link to="/register">Registar</router-link>
 		</div>
 		<div v-else id="nav">
-			<p>Sessão iniciada como: {{ $store.getters['getLoggedUser'].username }}</p>
+			<p>Sessão iniciada como: {{ $store.getters.getLoggedUser.username }}</p>
 			<button @click="$store.commit('logout')">Terminar sessão</button>
 		</div>
 		<router-view />

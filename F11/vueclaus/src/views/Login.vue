@@ -30,7 +30,7 @@
 		},
 		methods: {
 			onSubmit() {
-				let user = this.$store.getters['checkUser'](this.form.username, this.form.password);
+				let user = this.$store.getters.checkUser(this.form.username, this.form.password);
 
 				if (!user) return alert('Credenciais inválidas!');
 

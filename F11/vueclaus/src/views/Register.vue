@@ -36,7 +36,7 @@
 		},
 		methods: {
 			onSubmit() {
-				if (!this.$store.getters['isUsernameAvailable'](this.form.username)) return alert('Username já registado!');
+				if (!this.$store.getters.isUsernameAvailable(this.form.username)) return alert('Username já registado!');
 
 				this.$store.commit('addUser', this.form);
 				alert('Registado com sucesso!');
